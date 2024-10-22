@@ -1,4 +1,4 @@
-import {Component, computed, input, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -11,22 +11,21 @@ export class UserComponent {
   // Here we had to add variable type as well because this introduced by us. Earlier we were using Angular inbuild functions and attributes.
   // If we need to create components input, properties and custom inputs we use below way.
   // By adding '!' mark we tell that we have set value outside of this file to the variable.
-  // @Input({ required: true }) avatar!: string;
-  // @Input({ required: true }) name!: string;
-  @Input() id!: string;
+  @Input({ required: true }) avatar!: string;
+  @Input({ required: true }) name!: string;
+  @Input({ required: true }) id!: string;
 
-  // We can do the same input creation with signals in below way
-  // These are readonly variables only to this component but from app.component we can change
-  avatar = input.required<string>();
-  name = input.required<string>();
+  // Unlike input property output property will receive a default value.
+  // This EventEmitter will allow us to Emit custom values to any parent components through this select property.
+  @Output() select = new EventEmitter<string>();
 
-  imagePath = computed(() => {
-    return 'assets/users/' + this.avatar();
-  })
 
-  /*get imagePath() {
+  get imagePath() {
     return 'assets/users/' + this.avatar;
-  }*/
+  }
 
-  onSelectUser(){}
+  onSelectUser(){
+    // We can use this value in parent components by calling to '$event' special variable
+    this.select.emit(this.id);
+  }
 }
