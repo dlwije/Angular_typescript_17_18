@@ -22,6 +22,7 @@ export class UserComponent {
 
   // Because of we call to this function we need to add parenthesis when we use it in HTML template
   onSelectUser() {
-    console.log('Clicked');
+    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length)
+    this.selectedUser = DUMMY_USERS[randomIndex];
   }
 }
