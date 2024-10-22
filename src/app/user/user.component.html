@@ -1,6 +1,6 @@
 <div>
   <button (click)="onSelectUser()">
-    <img [src]="imagePath()" [alt]="selectedUser().name" />
-    <span [attr.aria-userId]="selectedUser().id">{{ selectedUser().name }}</span>
+    <img [src]="imagePath" [alt]="name" />
+    <span [attr.aria-userId]="id">{{ name }}</span>
   </button>
 </div>

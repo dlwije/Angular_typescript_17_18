@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -8,7 +8,16 @@ import {Component} from '@angular/core';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  // Because of we call to this function we need to add parenthesis when we use it in HTML template
-  onSelectUser() {
+  // Here we had to add variable type as well because this introduced by us. Earlier we were using Angular inbuild functions and attributes.
+  // If we need to create components input we use below way.
+  // By adding '!' mark we tell that we have set value outside of this file to the variable.
+  @Input() avatar!: string;
+  @Input() name!: string;
+  @Input() id!: string;
+
+  get imagePath() {
+    return 'assets/users/' + this.avatar;
   }
+
+  onSelectUser(){}
 }
