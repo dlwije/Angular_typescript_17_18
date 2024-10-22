@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, output, Output} from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -17,8 +17,10 @@ export class UserComponent {
 
   // Unlike input property output property will receive a default value.
   // This EventEmitter will allow us to Emit custom values to any parent components through this select property.
-  @Output() select = new EventEmitter<string>();
+  // @Output() select = new EventEmitter<string>();
 
+  // This is just a replacement for above @Output only. Does the same job and this won't create any kind of signals
+  select = output<string>();
 
   get imagePath() {
     return 'assets/users/' + this.avatar;
