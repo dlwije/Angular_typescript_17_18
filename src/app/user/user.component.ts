@@ -17,10 +17,7 @@ export class UserComponent {
 
   // Unlike input property output property will receive a default value.
   // This EventEmitter will allow us to Emit custom values to any parent components through this select property.
-  // @Output() select = new EventEmitter<string>();
-
-  // This is just a replacement for above @Output only. Does the same job and this won't create any kind of signals
-  select = output<string>();
+  @Output() select = new EventEmitter<string>();
 
   get imagePath() {
     return 'assets/users/' + this.avatar;
