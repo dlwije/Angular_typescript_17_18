@@ -12,7 +12,7 @@ export class UserComponent {
   // If we need to create components input we use below way.
   // By adding '!' mark we tell that we have set value outside of this file to the variable.
   @Input() avatar!: string;
-  @Input() name!: string;
+  @Input({ required: true }) name!: string;
   @Input() id!: string;
 
   get imagePath() {
