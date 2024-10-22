@@ -19,4 +19,9 @@ export class UserComponent {
   get imagePath() {
     return 'assets/users/'+this.selectedUser.avatar;
   }
+
+  // Because of we call to this function we need to add parenthesis when we use it in HTML template
+  onSelectUser() {
+    console.log('Clicked');
+  }
 }
