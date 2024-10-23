@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, output, Output} from '@angular/core';
 
+import { User } from "./user.model";
+
 // Below is same as interface
 // type User = {
 //   id: string;
@@ -8,11 +10,7 @@ import {Component, EventEmitter, Input, output, Output} from '@angular/core';
 // }
 
 // With 'interface' keyword only can be defined object types, but 'type' keyword we create other types also
-interface User {
-  id: string;
-  avatar: string;
-  name: string;
-}
+// interface moved to separate folder
 
 @Component({
   selector: 'app-user',
