@@ -15,7 +15,7 @@
 
   <!--The new way after 17 Angular-->
   @if(selectedUser){
-    <app-tasks [name]="selectedUser.name" />
+    <app-tasks [userId]="selectedUser.id" [name]="selectedUser.name" />
   } @else {
     <p>Select an user to see their tasks!</p>
   }
