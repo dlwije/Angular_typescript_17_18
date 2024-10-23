@@ -15,7 +15,7 @@ import {TaskComponent} from "./task/task.component";
 })
 export class AppComponent {
   users = DUMMY_USERS;
-  selectedUserID = 'u1';
+  selectedUserID?: string;
 
   get selectedUser() {
     // Here I added '!' because this could return undefined so it is giving the type error app.component.html
