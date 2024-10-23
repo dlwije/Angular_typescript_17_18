@@ -1,5 +1,19 @@
 import {Component, EventEmitter, Input, output, Output} from '@angular/core';
 
+// Below is same as interface
+// type User = {
+//   id: string;
+//   avatar: string;
+//   name: string;
+// }
+
+// With 'interface' keyword only can be defined object types, but 'type' keyword we create other types also
+interface User {
+  id: string;
+  avatar: string;
+  name: string;
+}
+
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -16,11 +30,7 @@ export class UserComponent {
   @Input({ required: true }) id!: string;*/
 
   // Instead of creating variable wise we can create it as an Object like below
-  @Input({ required: true }) user!: {
-    id: string;
-    avatar: string;
-    name: string;
-  }
+  @Input({ required: true }) user!: User;
 
   // Unlike input property output property will receive a default value.
   // This EventEmitter will allow us to Emit custom values to any parent components through this select property.
