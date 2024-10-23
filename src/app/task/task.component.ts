@@ -8,6 +8,8 @@ import {Component, Input} from '@angular/core';
   styleUrl: './task.component.css'
 })
 export class TaskComponent {
-  @Input({ required: true }) name!: string;
+  // from '?' we tell it might not be defined or initialized
+  // Instead of '?' sign we can use union type by adding '|' mark as well. EX: string | undefined
+  @Input() name?: string;
 
 }

@@ -20,7 +20,7 @@ export class AppComponent {
   get selectedUser() {
     // Here I added '!' because this could return undefined so it is giving the type error app.component.html
 
-    return this.users.find(user => user.id === this.selectedUserID)!;
+    return this.users.find(user => user.id === this.selectedUserID);
   }
 
   onSelectUser(id: string) {
