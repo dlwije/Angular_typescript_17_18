@@ -29,6 +29,7 @@ export class UserComponent {
 
   // Instead of creating variable wise we can create it as an Object like below
   @Input({ required: true }) user!: User;
+  @Input({ required: true }) selected!: boolean;
 
   // Unlike input property output property will receive a default value.
   // This EventEmitter will allow us to Emit custom values to any parent components through this select property.
