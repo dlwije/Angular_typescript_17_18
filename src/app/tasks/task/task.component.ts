@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 // It is optional to add 'type' keyword in front of interface name we imported here
 import { type Task } from "./task.model";
@@ -12,4 +12,9 @@ import { type Task } from "./task.model";
 })
 export class TaskComponent {
   @Input({ required: true }) task!: Task;
+  @Output() complete = new EventEmitter<string>();
+
+  onCompleteTask(){
+    this.complete.emit(this.task.id);
+  }
 }
