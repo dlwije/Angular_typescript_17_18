@@ -22,12 +22,10 @@ export class TasksComponent {
   /*private tasksService = new TasksService();*/
   // So, because of that, we use dependency injection to share the same instance.
 
-  constructor(private tasksService: TasksService) {
-    //Private: The property is accessible from inside the class
-    //Public: The property is also available from outside the class(e.g from inside the template)
-    // Dependency Injection: We tell Angular which type of value you need and Angular creates it and provides it as an argument.
-
-  }
+  //Private: The property is accessible from inside the class
+  //Public: The property is also available from outside the class(e.g., from inside the template)
+  // Dependency Injection: We tell Angular which type of value you need and Angular creates it and provides it as an argument.
+  constructor(private tasksService: TasksService) { }
 
 
   get selectedUserTasks() {
@@ -42,12 +40,8 @@ export class TasksComponent {
     this.isAddingTask = true;
   }
 
-  onCancelAddTask() {
+  onCloseAddTask() {
     this.isAddingTask = false;
   }
 
-  onAddTask(taskData: NewTaskData) {
-
-    this.isAddingTask = false;
-  }
 }
