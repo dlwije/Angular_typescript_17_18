@@ -12,10 +12,9 @@ import {FormsModule} from "@angular/forms";
 })
 export class NewTaskComponent {
   @Output() cancel = new EventEmitter<void>();
-  // When we use signal for Two-way binding we don't need to change the ngModel property on form
-  enteredTitle = signal('');
-  enteredSummary = signal('');
-  enteredDate = signal('');
+  enteredTitle = '';
+  enteredSummary = '';
+  enteredDate = '';
 
   onCancel () {
     this.cancel.emit();
