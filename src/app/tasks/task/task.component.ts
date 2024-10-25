@@ -1,9 +1,10 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input, Inject} from '@angular/core';
 
 // It is optional to add 'type' keyword in front of interface name we imported here
 import { type Task } from "./task.model";
 import {CardComponent} from "../../shared/card/card.component";
 import {DatePipe} from "@angular/common";
+import {TasksService} from "../tasks.service";
 
 @Component({
   selector: 'app-task',
@@ -17,9 +18,10 @@ import {DatePipe} from "@angular/common";
 })
 export class TaskComponent {
   @Input({ required: true }) task!: Task;
-  @Output() complete = new EventEmitter<string>();
+  constructor(private tasksService: TasksService) { }
 
   onCompleteTask(){
-    this.complete.emit(this.task.id);
+    // console.log(this.task);
+    this.tasksService.finishTask(this.task.id);
   }
 }

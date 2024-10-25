@@ -44,7 +44,7 @@ export class TasksService {
     });
   }
 
-  removeTask (taskId: string) {
-    this.tasks = this.tasks.filter((task) => task.id !== taskId);
+  finishTask(id: string) {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
   }
 }
